@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Selectors Demo</title>
+  <style>
+    /* Descendant Selector */
+    .descendant p {
+      color: blue;
+      font-style: italic;
+    }
+
+    /* Child Selector */
+    .child > p {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Attribute Selector - input[type="text"] */
+    input[type="text"] {
+      border: 2px solid green;
+      padding: 5px;
+    }
+
+    /* Attribute Selector - button[data-type="special"] */
+    button[data-type="special"] {
+      background-color: yellow;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Descendant Selector Example -->
+  <div class="descendant">
+    <p>This is inside .descendant and should be blue italic.</p>
+    <div>
+      <p>This is nested but still inside .descendant and should be blue italic.</p>
+    </div>
+  </div>
+
+  <!-- Child Selector Example -->
+  <div class="child">
+    <p>This is a direct child of .child and should be red bold.</p>
+    <div>
+      <p>This is nested and should NOT be affected by .child > p.</p>
+    </div>
+  </div>
+
+  <!-- Attribute Selector Example -->
+  <form>
+    <input type="text" placeholder="Text field 1"><br><br>
+    <input type="text" placeholder="Text field 2"><br><br>
+    <input type="password" placeholder="Password (should not be styled)"><br><br>
+    <button data-type="special">Special Button</button>
+    <button>Normal Button</button>
+  </form>
+
+</body>
+</html>
